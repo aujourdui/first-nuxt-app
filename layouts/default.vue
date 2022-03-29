@@ -1,6 +1,5 @@
 <script>
-export default {
-};
+export default {};
 </script>
 
 <template>
@@ -8,3 +7,13 @@ export default {
     <Nuxt />
   </div>
 </template>
+
+<style>
+html {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+</style>
