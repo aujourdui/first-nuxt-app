@@ -1,5 +1,11 @@
 <script>
-export default {};
+import PostPreview from "@/components/Posts/PostPreview";
+
+export default {
+  components: {
+    PostPreview,
+  },
+};
 </script>
 
 <template>
@@ -8,34 +14,24 @@ export default {};
       <h1>Get the latest tech news</h1>
     </section>
     <section class="featured-posts">
-      <NuxtLink :to="'/posts/' + 1" class="post-preview">
-        <article>
-          <div
-            class="post-thumbnail"
-            style="
-              background-image: url('https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg');
-            "
-          ></div>
-          <div class="post-content">
-            <h1>Post Title</h1>
-            <p>Preview Text</p>
-          </div>
-        </article>
-      </NuxtLink>
-      <NuxtLink :to="'/posts/' + 2" class="post-preview">
-        <article>
-          <div
-            class="post-thumbnail"
-            style="
-              background-image: url('https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg');
-            "
-          ></div>
-          <div class="post-content">
-            <h1>Post Title 2</h1>
-            <p>Preview Text 2</p>
-          </div>
-        </article>
-      </NuxtLink>
+      <PostPreview
+        id="1"
+        thumbnail="https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg"
+        title="Hello world"
+        previewText="This is my first post!"
+      />
+      <PostPreview
+        id="2"
+        thumbnail="https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg"
+        title="Hello world second"
+        previewText="This is my second post!"
+      />
+      <PostPreview
+        id="3"
+        thumbnail="https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg"
+        title="Hello world third"
+        previewText="This is my third post!"
+      />
     </section>
   </div>
 </template>
@@ -78,41 +74,5 @@ export default {};
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
 }
 </style>
