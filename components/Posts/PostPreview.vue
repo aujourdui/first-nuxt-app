@@ -23,7 +23,6 @@ export default {
 </script>
 
 <template>
-  <!-- https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg -->
   <NuxtLink :to="'/posts/' + id" class="post-preview">
     <article>
       <div
