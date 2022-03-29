@@ -4,6 +4,6 @@ export default {};
 
 <template>
   <section>
-    <h1>Hello</h1>
+    <NuxtLink to="/users">User</NuxtLink>
   </section>
 </template>
