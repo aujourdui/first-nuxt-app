@@ -11,7 +11,9 @@ export default {
 <template>
   <div class="admin-page">
     <section class="new-post">
-      <button>Create a new post</button>
+      <button @click="$router.push('/admin/new-post')">
+        Create a new post
+      </button>
     </section>
     <section class="existing-posts">
       <h1>Existing posts</h1>
