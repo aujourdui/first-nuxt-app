@@ -1,12 +1,35 @@
+<script>
+export default {
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPost: {
+          id: "1",
+          title: "First post (ID: " + context.route.params.id + ")",
+          previewText: "This is first post",
+          author: "Kyosuke",
+          updatedDate: new Date(),
+          context: "Some dummy text",
+          thumbnail:
+            "https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg",
+        },
+      });
+    }, 1000);
+  },
+};
+</script>
+
 <template>
   <div class="single-post-page">
     <section class="post">
-      <h1 class="post-title">Title of the post</h1>
+      <h1 class="post-title">{{ loadedPost.title }}</h1>
       <div class="post-details">
-        <div class="post-detail">Last updated on XXX</div>
-        <div class="post-detail">Written by name</div>
+        <div class="post-detail">
+          Last updated on {{ loadedPost.updatedDate }}
+        </div>
+        <div class="post-detail">Written by {{ loadedPost.author }}</div>
       </div>
-      <p class="post-content">Content of the post</p>
+      <p class="post-content">{{ loadedPost.content }}</p>
     </section>
     <section class="post-feedback">
       <p>
