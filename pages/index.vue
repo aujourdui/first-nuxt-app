@@ -1,9 +1,9 @@
 <script>
-import PostPreview from "@/components/Posts/PostPreview";
+import PostList from "@/components/Posts/PostList";
 
 export default {
   components: {
-    PostPreview,
+    PostList,
   },
 };
 </script>
@@ -13,26 +13,7 @@ export default {
     <section class="intro">
       <h1>Get the latest tech news</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview
-        id="1"
-        thumbnail="https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg"
-        title="Hello world"
-        previewText="This is my first post!"
-      />
-      <PostPreview
-        id="2"
-        thumbnail="https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg"
-        title="Hello world second"
-        previewText="This is my second post!"
-      />
-      <PostPreview
-        id="3"
-        thumbnail="https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg"
-        title="Hello world third"
-        previewText="This is my third post!"
-      />
-    </section>
+    <PostList />
   </div>
 </template>
 
