@@ -5,6 +5,26 @@ export default {
   components: {
     PostList,
   },
+  data() {
+    return {
+      loadedPosts: [
+        {
+          id: "1",
+          title: "First post",
+          previewText: "This is first post",
+          thumbnail:
+            "https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg",
+        },
+        {
+          id: "2",
+          title: "Second post",
+          previewText: "This is Second post",
+          thumbnail:
+            "https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -13,7 +33,7 @@ export default {
     <section class="intro">
       <h1>Get the latest tech news</h1>
     </section>
-    <PostList />
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
