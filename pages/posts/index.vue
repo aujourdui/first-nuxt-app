@@ -5,28 +5,34 @@ export default {
   components: {
     PostList,
   },
-  asyncData(context, callback) {
-    return new Promise().catch((e) => context.error(new Error()));
-    setTimeout(() => {
-      callback(null, {
-        loadedPosts: [
-          {
-            id: "1",
-            title: "First post",
-            previewText: "This is first post",
-            thumbnail:
-              "https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg",
-          },
-          {
-            id: "2",
-            title: "Second post",
-            previewText: "This is Second post",
-            thumbnail:
-              "https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg",
-          },
-        ],
-      });
-    }, 1500);
+  asyncData(context) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          loadedPosts: [
+            {
+              id: "1",
+              title: "First post",
+              previewText: "This is first post",
+              thumbnail:
+                "https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg",
+            },
+            {
+              id: "2",
+              title: "Second post",
+              previewText: "This is Second post",
+              thumbnail:
+                "https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg",
+            },
+          ],
+        });
+      }, 1500);
+      // reject(new Error());
+    })
+      .then((data) => {
+        return data;
+      })
+      .catch((e) => context.error(e));
   },
 };
 </script>
