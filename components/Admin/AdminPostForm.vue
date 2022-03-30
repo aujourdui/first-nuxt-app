@@ -18,19 +18,18 @@ export default {
       editedPost: this.post
         ? { ...this.post }
         : {
-            editedPost: {
-              author: "",
-              title: "",
-              thumbnailLink: "",
-              content: "",
-            },
+            author: "",
+            title: "",
+            thumbnail: "",
+            content: "",
+            previewText: "",
           },
     };
   },
   methods: {
     onSave() {
       // Save the post
-      console.log(this.editedPost);
+      this.$emit("submit", this.editedPost);
     },
     onCancel() {
       // nav back
@@ -46,12 +45,15 @@ export default {
 
     <AppControlInput v-model="editedPost.title">Title</AppControlInput>
 
-    <AppControlInput v-model="editedPost.thumbnailLink"
+    <AppControlInput v-model="editedPost.thumbnail"
       >Thumbnail Link</AppControlInput
     >
 
     <AppControlInput control-type="textarea" v-model="editedPost.content"
       >Content</AppControlInput
+    >
+    <AppControlInput control-type="textarea" v-model="editedPost.previewText"
+      >Preview</AppControlInput
     >
 
     <AppButton type="submit">Save</AppButton>
