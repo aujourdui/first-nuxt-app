@@ -12,7 +12,7 @@ export default {
         author: "Kyosuke",
         title: "My post",
         content: "This is my post",
-        thumbnailLink:
+        thumbnail:
           "https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg",
       },
     };
