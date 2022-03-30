@@ -30,7 +30,9 @@ export default {
             ".json",
           editedPost
         )
-        .then((res) => console.log(res))
+        .then((res) => {
+          this.$router.push("/admin");
+        })
         .catch((err) => console.log(err));
     },
   },
