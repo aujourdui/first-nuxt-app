@@ -18,19 +18,17 @@ export default {
       editedPost: this.post
         ? { ...this.post }
         : {
-            editedPost: {
-              author: "",
-              title: "",
-              thumbnailLink: "",
-              content: "",
-            },
+            author: "",
+            title: "",
+            thumbnailLink: "",
+            content: "",
           },
     };
   },
   methods: {
     onSave() {
       // Save the post
-      console.log(this.editedPost);
+      this.$emit("submit", this.editedPost);
     },
     onCancel() {
       // nav back
