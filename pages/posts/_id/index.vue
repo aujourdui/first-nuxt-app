@@ -1,20 +1,20 @@
 <script>
+import axios from "axios";
+
 export default {
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPost: {
-          id: "1",
-          title: "First post (ID: " + context.route.params.id + ")",
-          previewText: "This is first post",
-          author: "Kyosuke",
-          updatedDate: new Date(),
-          context: "Some dummy text",
-          thumbnail:
-            "https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg",
-        },
-      });
-    }, 1000);
+  asyncData(context) {
+    return axios
+      .get(
+        "https://nuxt-blog-121f5-default-rtdb.firebaseio.com/posts/" +
+          context.params.id +
+          ".json"
+      )
+      .then((res) => {
+        return {
+          loadedPost: res.data,
+        };
+      })
+      .catch((e) => context.error(e));
   },
 };
 </script>
