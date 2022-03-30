@@ -5,29 +5,12 @@ export default {
   components: {
     PostList,
   },
-  asyncData(context, callback) {
-    console.log("asyncdata");
-    setTimeout(() => {
-      callback(null, {
-        loadedPosts: [
-          {
-            id: "1",
-            title: "First post",
-            previewText: "This is first post",
-            thumbnail:
-              "https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg",
-          },
-          {
-            id: "2",
-            title: "Second post",
-            previewText: "This is Second post",
-            thumbnail:
-              "https://youmatter.world/app/uploads/sites/2/2019/11/tech-planet.jpg",
-          },
-        ],
-      });
-    }, 1500);
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts;
+    },
   },
+
   // data() {
   //   return {
   //     loadedPosts: [
